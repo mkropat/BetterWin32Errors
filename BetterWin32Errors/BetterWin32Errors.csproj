@@ -1,7 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
   </PropertyGroup>
+
+  <Target Name="Build Win32Error" Condition="!Exists('$(ProjectDir)\Win32Error.cs')" BeforeTargets="BeforeBuild">
+    <Exec Command="powershell.exe -File winerror2enum.ps1 &gt; Win32Error.cs" WorkingDirectory="$(ProjectDir)" />
+  </Target>
 
 </Project>
