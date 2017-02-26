@@ -1,8 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Authors>Michael Kropat</Authors>
+    <Copyright>Copyright 2017 (c) Michael Kropat</Copyright>
+    <Description>A better interface to the constants defined in winerror.h.</Description>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <PackageId>BetterWin32Errors</PackageId>
+    <PackageLicenseUrl>https://github.com/mkropat/BetterWin32Errors/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/mkropat/BetterWin32Errors/</PackageProjectUrl>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageTags>win32 error pinvoke interop</PackageTags>
+    <PackageVersion>0.1.0</PackageVersion>
     <TargetFrameworks>netstandard1.4;net20;net40;net45</TargetFrameworks>
+    <Title>BetterWin32Errors</Title>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.4|AnyCPU'">
