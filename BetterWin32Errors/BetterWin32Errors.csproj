@@ -4,6 +4,22 @@
     <TargetFrameworks>netstandard1.4;net20;net40;net45</TargetFrameworks>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.4|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard1.4\BetterWin32Errors.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net20|AnyCPU'">
+    <DocumentationFile>bin\Release\net20\BetterWin32Errors.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net40|AnyCPU'">
+    <DocumentationFile>bin\Release\net40\BetterWin32Errors.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
+    <DocumentationFile>bin\Release\net45\BetterWin32Errors.xml</DocumentationFile>
+  </PropertyGroup>
+
   <Target Name="Build Win32Error" Condition="!Exists('$(ProjectDir)\Win32Error.cs')" BeforeTargets="BeforeBuild">
     <Exec Command="powershell.exe -File winerror2enum.ps1 &gt; Win32Error.cs" WorkingDirectory="$(ProjectDir)" />
   </Target>
