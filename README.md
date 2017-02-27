@@ -95,3 +95,7 @@ The only import you need to know is:
 ```csharp
 using BetterWin32Errors;
 ```
+
+## Limitations
+
+There are thousands of error constants defined in [&lt;winerror.h&gt;](https://msdn.microsoft.com/en-us/library/windows/desktop/ms681381.aspx). All error constants included in this library were parsed using a [script](https://github.com/mkropat/BetterWin32Errors/blob/master/BetterWin32Errors/winerror2enum.ps1). As such, __there is no guarantee that the error constants have the correct values in all cases and for all platforms__. Feel free to [submit an issue](https://github.com/mkropat/BetterWin32Errors/issues) if you run into such a problem.
