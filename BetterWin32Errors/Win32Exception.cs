@@ -28,6 +28,11 @@ namespace BetterWin32Errors
         public string ErrorMessage { get; private set; }
 
         /// <summary>
+        /// Custom message which can be utilized in logic code.
+        /// </summary>
+        public string CustomMessage { get; private set; }
+
+        /// <summary>
         /// Create a new exception using the value from <see cref="GetLastWin32Error"/>. Note: make sure to set SetLastError=true on <see cref="DllImportAttribute"/>.
         /// </summary>
         public Win32Exception()
@@ -36,12 +41,33 @@ namespace BetterWin32Errors
         }
 
         /// <summary>
+        /// Create a new exception with given error code.
         /// </summary>
         public Win32Exception(Win32Error error)
             : base($"{error}: {GetMessage(error)}")
         {
             Error = error;
             ErrorMessage = GetMessage(error);
+        }
+
+        /// <summary>
+        /// Create a new exception using the value from <see cref="GetLastWin32Error"/> and custom message. Note: make sure to set SetLastError=true on <see cref="DllImportAttribute"/>.
+        /// </summary>
+        public Win32Exception(string customMessage)
+            : this(GetLastWin32Error())
+        {
+            CustomMessage = customMessage;
+        }
+
+        /// <summary>
+        /// Create a new exception with given error code and custom message
+        /// </summary>
+        public Win32Exception(Win32Error error, string customMessage)
+            : base($"{error}: {GetMessage(error)}")
+        {
+            Error = error;
+            ErrorMessage = GetMessage(error);
+            CustomMessage = customMessage;
         }
 
         static string GetMessage(Win32Error error)
