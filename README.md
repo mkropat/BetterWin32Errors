@@ -1,5 +1,8 @@
 # BetterWin32Errors
 
+[![NuGet](https://img.shields.io/nuget/dt/BetterWin32Errors.svg)](https://www.nuget.org/packages/BetterWin32Errors/)
+
+
 A better interface to the constants defined in winerror.h
 
 ### Simplified Error Handling
